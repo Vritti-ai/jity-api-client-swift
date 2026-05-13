@@ -23,7 +23,7 @@ public final class JityContentApi {
         self.authHeader = "Basic \(encoded)"
     }
 
-    public func listPosts(payload: JityApiPayload = .init()) async throws -> JityApiResponse<[JityContentItem]> {
+    public func searchPosts(payload: JityApiPayload = .init()) async throws -> JityApiResponse<[JityContentItem]> {
         var components = URLComponents(url: baseURL.appendingPathComponent("list-posts"), resolvingAgainstBaseURL: false)!
         let queryItems = payload.queryItems
         if !queryItems.isEmpty {
